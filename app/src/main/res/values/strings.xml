@@ -1,9 +1,16 @@
 <resources>
     <string name="app_name">ShoeStore</string>
+
+<!--    Fragment Login/Signup-->
     <string name="email_text">Email</string>
     <string name="password_text">Password</string>
     <string name="email_field_hint">Email</string>
     <string name="field_password_hint">password</string>
-    <string name="button_login_text">login</string>
-    <string name="button_signup_text">signup</string>
+    <string name="button_login_label">login</string>
+    <string name="button_signup_label">signup</string>
+
+<!--    Fragment Welcome-->
+    <string name="welcome_text">Welcome to Shoe store</string>
+    <string name="navigation_to_instructions_text">Please proceed to instructions</string>
+    <string name="button_instructions_label">Instructions</string>
 </resources>
