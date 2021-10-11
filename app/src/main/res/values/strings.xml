@@ -13,4 +13,9 @@
     <string name="welcome_text">Welcome to Shoe store</string>
     <string name="navigation_to_instructions_text">Please proceed to instructions</string>
     <string name="button_instructions_label">Instructions</string>
+
+<!--    Fragment Instructions-->
+    <string name="instructions_text1">The Main Screen is for List of Shoes</string>
+    <string name="instructions_text2">You can add more shoes by pressing the button \"Add Shoe\"</string>
+    <string name="button_shoe_store_label">Proceed</string>
 </resources>
