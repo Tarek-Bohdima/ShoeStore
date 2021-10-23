@@ -1,40 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    tools:context="com.udacity.shoestore.screens.fragments.InstructionsFragment">
 
-    <TextView
-        android:id="@+id/instructions_text1"
-        style="@style/instructions_text"
-        android:text="@string/instructions_text1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
+    <data>
 
-    <TextView
-        android:id="@+id/instructions_text2"
-        style="@style/instructions_text"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:text="@string/instructions_text2"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/instructions_text1"
-        app:layout_constraintVertical_bias="0.25" />
+    </data>
 
-    <Button
-        android:id="@+id/button_shoe_store"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_shoe_store_label"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/instructions_text2" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:id="@+id/instructions_text1"
+            style="@style/instructions_text"
+            android:text="@string/instructions_text1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25" />
+
+        <TextView
+            android:id="@+id/instructions_text2"
+            style="@style/instructions_text"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/instructions_text2"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/instructions_text1"
+            app:layout_constraintVertical_bias="0.25" />
+
+        <Button
+            android:id="@+id/button_shoe_store"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_shoe_store_label"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/instructions_text2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
