@@ -20,6 +20,15 @@
     <string name="button_shoe_store_label">Proceed</string>
     <string name="fab_content_description">Add shoe to shoe store</string>
     <string name="title_logout">Log out</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+  
+    <string name="shoe_name_hint">Shoe name</string>
+    <string name="company_hint">Company</string>
+    <string name="shoe_size_hint">42</string>
+    <string name="description_hint">Description</string>
+    <string name="label_button_save">Save</string>
+    <string name="label_button_cancel">Cancel</string>
+    <string name="text_label_shoe_name">Shoe Name</string>
+    <string name="text_label_company_name">Company name</string>
+    <string name="text_label_shoe_size">Shoe size</string>
+    <string name="text_label_description">Description</string>
 </resources>
