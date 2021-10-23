@@ -20,7 +20,7 @@
     <string name="button_shoe_store_label">Proceed</string>
     <string name="fab_content_description">Add shoe to shoe store</string>
     <string name="title_logout">Log out</string>
-  
+
     <string name="shoe_name_hint">Shoe name</string>
     <string name="company_hint">Company</string>
     <string name="shoe_size_hint">42</string>
@@ -31,4 +31,11 @@
     <string name="text_label_company_name">Company name</string>
     <string name="text_label_shoe_size">Shoe size</string>
     <string name="text_label_description">Description</string>
+
+    <string name="shoe_name">Shoe Name: %1$s</string>
+    <string name="company">Company: %1$s</string>
+    <string name="size">Size: %1$.0f</string>
+    <string name="description">Description: %1$s</string>
+    <string name="images">Images: %1$s</string>
+    <string name="no_data_available">Store is empty , Please add some Shoes</string>
 </resources>

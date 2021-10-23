@@ -23,16 +23,28 @@
             android:src="@drawable/ic_add" />
 
         <ScrollView
+            android:id="@+id/scrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fillViewport="true">
 
             <LinearLayout
+                android:layout_margin="16dp"
                 android:id="@+id/linearlayout_shoelist"
+                android:fitsSystemWindows="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                tools:ignore="UselessLeaf" />
+                tools:ignore="UselessLeaf" >
+                <TextView
+                    android:id="@+id/empty_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    style="@style/label_text"
+                    android:gravity="center"
+                    android:visibility="visible"
+                    android:text="@string/no_data_available" />
+            </LinearLayout>
         </ScrollView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
