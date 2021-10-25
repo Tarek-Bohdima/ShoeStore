@@ -42,7 +42,7 @@
                     android:layout_height="match_parent"
                     style="@style/label_text"
                     android:gravity="center"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:text="@string/no_data_available" />
             </LinearLayout>
         </ScrollView>

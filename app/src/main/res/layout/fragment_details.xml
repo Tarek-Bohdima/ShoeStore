@@ -6,6 +6,10 @@
 
     <data>
 
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
+
     </data>
 
     <ScrollView
@@ -27,9 +31,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="64dp"
+                android:text="@string/text_label_shoe_name"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:text="@string/text_label_shoe_name" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
                 android:id="@+id/edit_text_shoe_name"
@@ -39,6 +43,7 @@
                 android:ems="10"
                 android:hint="@string/shoe_name_hint"
                 android:inputType="textPersonName"
+                android:text="@={shoe.name}"
                 app:layout_constraintStart_toStartOf="@+id/label_shoe_name"
                 app:layout_constraintTop_toBottomOf="@+id/label_shoe_name" />
 
@@ -48,9 +53,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
+                android:text="@string/text_label_company_name"
                 app:layout_constraintStart_toStartOf="@+id/edit_text_shoe_name"
-                app:layout_constraintTop_toBottomOf="@+id/edit_text_shoe_name"
-                android:text="@string/text_label_company_name" />
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_shoe_name" />
 
             <EditText
                 android:id="@+id/edit_text_company"
@@ -60,6 +65,7 @@
                 android:ems="10"
                 android:hint="@string/company_hint"
                 android:inputType="textPersonName"
+                android:text="@={shoe.company}"
                 app:layout_constraintStart_toStartOf="@+id/label_company"
                 app:layout_constraintTop_toBottomOf="@+id/label_company" />
 
@@ -69,9 +75,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
+                android:text="@string/text_label_shoe_size"
                 app:layout_constraintStart_toStartOf="@+id/edit_text_company"
-                app:layout_constraintTop_toBottomOf="@+id/edit_text_company"
-                android:text="@string/text_label_shoe_size" />
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_company" />
 
             <EditText
                 android:id="@+id/edit_text_shoe_size"
@@ -81,6 +87,7 @@
                 android:ems="2"
                 android:hint="@string/shoe_size_hint"
                 android:inputType="number"
+                android:text="@={`` + shoe.size}"
                 android:textAlignment="center"
                 app:layout_constraintStart_toStartOf="@+id/label_shoe_size"
                 app:layout_constraintTop_toBottomOf="@+id/label_shoe_size" />
@@ -91,9 +98,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
+                android:text="@string/text_label_description"
                 app:layout_constraintStart_toStartOf="@+id/edit_text_shoe_size"
-                app:layout_constraintTop_toBottomOf="@+id/edit_text_shoe_size"
-                android:text="@string/text_label_description" />
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_shoe_size" />
 
             <EditText
                 android:id="@+id/edit_text_description"
@@ -103,6 +110,7 @@
                 android:ems="10"
                 android:hint="@string/description_hint"
                 android:inputType="textPersonName"
+                android:text="@={shoe.description}"
                 app:layout_constraintStart_toStartOf="@+id/label_description"
                 app:layout_constraintTop_toBottomOf="@+id/label_description" />
 

@@ -1,35 +1,65 @@
 package com.udacity.shoestore.screens.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.Navigation
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentDetailsBinding
+import com.udacity.shoestore.models.Shoe
+import com.udacity.shoestore.screens.viewmodels.ShoeStoreViewModel
+import timber.log.Timber
 
 class DetailsFragment : Fragment() {
+
+    private val shoeViewModel: ShoeStoreViewModel by activityViewModels()
 
     private lateinit var binding: FragmentDetailsBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_details, container, false)
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_details, container, false)
 
-        binding.buttonCancel.setOnClickListener(
-            Navigation.createNavigateOnClickListener(DetailsFragmentDirections.actionDetailFragmentToShoeListFragment())
-        )
-
-        binding.buttonSave.setOnClickListener(
-            Navigation.createNavigateOnClickListener(DetailsFragmentDirections.actionDetailFragmentToShoeListFragment())
-        )
-
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.apply {
+            shoe = Shoe()
+
+            buttonCancel.setOnClickListener { it: View ->
+                it.findNavController()
+                    .navigate(DetailsFragmentDirections.actionDetailFragmentToShoeListFragment())
+            }
+
+            buttonSave.setOnClickListener { it: View ->
+
+                val shoeToAdd = Shoe(
+                    binding.shoe!!.name,
+                    binding.shoe!!.size,
+                    binding.shoe!!.company,
+                    binding.shoe!!.description,
+                    binding.shoe!!.images
+                )
+
+                saveShoe(shoeToAdd)
+                it.findNavController()
+                    .navigate(DetailsFragmentDirections.actionDetailFragmentToShoeListFragment())
+            }
+        }
+    }
+
+    private fun saveShoe(newShoe: Shoe) {
+        Timber.d("saveShoe is called with $newShoe")
+        shoeViewModel.addShoe(newShoe)
     }
 
 }

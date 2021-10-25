@@ -1,10 +1,7 @@
 package com.udacity.shoestore.screens.fragments
 
-import android.opengl.Visibility
 import android.os.Bundle
 import android.view.*
-import android.view.View.GONE
-import androidx.constraintlayout.widget.ConstraintSet.GONE
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -15,6 +12,7 @@ import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import com.udacity.shoestore.databinding.ItemShoeListBinding
 import com.udacity.shoestore.screens.viewmodels.ShoeStoreViewModel
+import timber.log.Timber
 
 class ShoeListFragment : Fragment() {
 
@@ -36,30 +34,25 @@ class ShoeListFragment : Fragment() {
             Navigation.createNavigateOnClickListener(ShoeListFragmentDirections.actionShoeListFragmentToDetailFragment())
         )
 
-
-        displayShoes(inflater, container)
-
-        return binding.root
-    }
-
-    private fun displayShoes(inflater: LayoutInflater, container: ViewGroup?) {
-
         shoeViewModel.shoesList.observe(viewLifecycleOwner, {
+            Timber.d("observer called from ShoeListFragment")
             it.forEach {
 
                 binding.emptyView.visibility = View.GONE
                 val shoeListItem =
                     ItemShoeListBinding.inflate(LayoutInflater.from(requireContext()), null, false)
                 shoeListItem.apply {
-                    this.shoeName.text = getString(R.string.shoe_name, "Nike Air")
-                    this.company.text = getString(R.string.company, "Nike")
-                    this.shoeSize.text = getString(R.string.size, 42.0)
-                    this.description.text = getString(R.string.description, "Description about the shoe")
-                    this.images.text = getString(R.string.images, "some urls")
+                    this.shoeName.text = getString(R.string.shoe_name, it.name)
+                    this.company.text = getString(R.string.company, it.company)
+                    this.shoeSize.text = getString(R.string.size, it.size)
+                    this.description.text = getString(R.string.description, it.description)
+                    this.images.text = getString(R.string.images, "some clickable urls")
                 }
-                    binding.linearlayoutShoelist.addView(shoeListItem.root)
+                binding.linearlayoutShoelist.addView(shoeListItem.root)
             }
         })
+
+        return binding.root
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
