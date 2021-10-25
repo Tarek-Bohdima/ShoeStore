@@ -43,16 +43,18 @@ class DetailsFragment : Fragment() {
 
             buttonSave.setOnClickListener {
 
-                val shoeToAdd = Shoe(
-                    binding.shoe!!.name,
-                    binding.shoe!!.size,
-                    binding.shoe!!.company,
-                    binding.shoe!!.description,
-                    binding.shoe!!.images
-                )
+                binding.shoe?.run {
+                    val shoeToAdd = Shoe(
+                        name,
+                        size,
+                        company,
+                        description,
+                        images
+                    )
 
+                    saveShoe(shoeToAdd)
+                }
 
-                saveShoe(shoeToAdd)
                 it.findNavController()
                     .navigate(DetailsFragmentDirections.actionDetailFragmentToShoeListFragment())
             }
