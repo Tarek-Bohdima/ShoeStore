@@ -16,7 +16,7 @@ class InstructionsFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 //        return inflater.inflate(R.layout.fragment_instructions, container, false)
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_instructions, container,
         false)
