@@ -9,6 +9,7 @@
         <variable
             name="shoe"
             type="com.udacity.shoestore.models.Shoe" />
+        <import type="com.udacity.shoestore.utils.BindingUtils"/>
 
     </data>
 
@@ -19,6 +20,7 @@
         android:fillViewport="true"
         android:orientation="vertical">
 
+<!--        using contraintlayout for complex views with flat hierarchy for better performance -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -87,7 +89,7 @@
                 android:ems="2"
                 android:hint="@string/shoe_size_hint"
                 android:inputType="number"
-                android:text="@={`` + shoe.size}"
+                android:text="@={BindingUtils.doubleToString(shoe.size)}"
                 android:textAlignment="center"
                 app:layout_constraintStart_toStartOf="@+id/label_shoe_size"
                 app:layout_constraintTop_toBottomOf="@+id/label_shoe_size" />

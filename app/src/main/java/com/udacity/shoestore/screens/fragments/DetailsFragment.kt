@@ -24,7 +24,10 @@ class DetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_details, container, false)
+//        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_details, container, false)
+
+        //more concise way to inflate
+        binding = FragmentDetailsBinding.inflate(inflater, container, false)
 
         return binding.root
     }
@@ -49,6 +52,7 @@ class DetailsFragment : Fragment() {
                     binding.shoe!!.description,
                     binding.shoe!!.images
                 )
+
 
                 saveShoe(shoeToAdd)
                 it.findNavController()

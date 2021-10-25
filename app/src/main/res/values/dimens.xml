@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="list_text_size">12sp</dimen>
+    <dimen name="margin_large_shoe_list">16dp</dimen>
+    <dimen name="margin_large_fab">16dp</dimen>
 </resources>

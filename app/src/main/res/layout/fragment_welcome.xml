@@ -8,6 +8,7 @@
 
     </data>
 
+    <!--    using Constraintlayout to manage possible complex views in future with flat hierarchy-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -7,6 +7,7 @@
 
     </data>
 
+    <!--    using coordinatorlayout as it shoe some components like cards and FAB with elevation in better way-->
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinator_layout"
         android:layout_width="match_parent"
@@ -15,12 +16,9 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="16dp"
             android:contentDescription="@string/fab_content_description"
-            android:src="@drawable/ic_add" />
+            android:src="@drawable/ic_add"
+            style="@style/fab_style" />
 
         <ScrollView
             android:id="@+id/scrollView"
@@ -28,8 +26,9 @@
             android:layout_height="match_parent"
             android:fillViewport="true">
 
+<!--            using Linearlayot for simple views for fast performance   -->
             <LinearLayout
-                android:layout_margin="16dp"
+                android:layout_margin="@dimen/margin_large_shoe_list"
                 android:id="@+id/linearlayout_shoelist"
                 android:fitsSystemWindows="true"
                 android:layout_width="match_parent"

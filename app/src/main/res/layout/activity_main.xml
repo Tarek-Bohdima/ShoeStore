@@ -8,6 +8,7 @@
 
     </data>
 
+<!--    using coordinatorlayout as it shoe some components like cards and FAB with elevation in better way-->
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -25,7 +25,11 @@ class ShoeListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
+//        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
+
+        //more concise way to inflate
+        binding = FragmentShoeListBinding.inflate(inflater, container, false)
+
         setHasOptionsMenu(true)
 
         binding.emptyView.visibility = View.VISIBLE
